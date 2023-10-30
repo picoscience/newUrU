@@ -27,7 +27,7 @@ const Home = () => {
     return (
         <Layout>
             <div className="container-fluid containerHome">
-                <img src={backHome} alt="Background Image" className="img-fluid imgBack"/>
+                <img src={backHome} alt="Background" className="img-fluid imgBack"/>
                 <div className='titleMenu'>
                     <span className='text-center'>
                     ¿QUÉ EQUIPO BUSCAS?  

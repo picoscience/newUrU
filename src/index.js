@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
-import * as bootstrap from 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle'
 import './styles/index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

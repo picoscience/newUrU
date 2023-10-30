@@ -8,7 +8,6 @@ import FilterSpecs from './FilterSpecs'
 const FilterProduct = ({ product }) => {
     const pc = useSelector((state) => state.pc)
     const portatil = useSelector((state) => state.portatil)
-    const celular = useSelector((state) => state.celular)
     const tablet = useSelector((state) => state.tablet)
     const dispatch = useDispatch()
     let subQuestions = null
@@ -70,7 +69,7 @@ const FilterProduct = ({ product }) => {
                             <span>{'(elige solo una opción)'}</span>
                         </div>
                         {Object.keys(subQuestions[questionKey]).map((subQuestionKey) => (
-                            <div key={subQuestions[questionKey][subQuestionKey].id} className='col-3 colsNeeds p-0'>
+                            <div key={subQuestions[questionKey][subQuestionKey].id} className='colsNeeds1 p-0'>
                                 <div onClick={() => handleClick(subQuestions[questionKey][subQuestionKey].id,subQuestions[questionKey][subQuestionKey].setter)} className={`contUserNeeds ${subQuestions[questionKey][subQuestionKey].state === subQuestions[questionKey][subQuestionKey].id ? 'active' : ''}`}>
                                     <span>{subQuestions[questionKey][subQuestionKey].text}</span>
                                     <div className='semiBorder'></div>

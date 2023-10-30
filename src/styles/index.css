@@ -4,8 +4,8 @@
 }
 /*NAVBAR*/
 .navbar-toggler-icon {
-    width: 4em;
-    height: 4em;
+    width: calc(3.5rem + 3vw);
+    height: calc(3.5rem + 3vw);
     padding: 0;
     background-image: url('../images/menu.png');
     transform: translateX(-12px);
@@ -24,7 +24,7 @@
     transform: translateX(-50%);
 }
 .navbar-brand img{
-    height: 95px;
+    height: calc(3.5rem + 3vw);
     width: auto;
     pointer-events: none;
     user-select: none;
@@ -41,11 +41,9 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 120vh;
+    height: calc(100% + 150px);
     pointer-events: none;
     user-select: none;
-    left: 50%;
-    transform: translateX(-50%);
     overflow-x: hidden;
 }
 .titleMenu {
@@ -138,6 +136,7 @@
     max-width: 800px;
 }
 .contCuerpoFilter {
+    border-radius: 35px;
     background-image: url('../images/cuerpo.png');
     background-size: 100% 100%;
     position: relative;
@@ -148,9 +147,13 @@
 }
 .contCuerpoFilter.izquierda{    
     background-image: url('../images/cuerpoIzq.png');
+    border-top-right-radius: 35px;
+    border-top-left-radius: 0px;
 }
 .contCuerpoFilter.derecha{
     background-image: url('../images/cuerpoDer.png');
+    border-top-left-radius: 35px;
+    border-top-right-radius: 0px;
 }
 .colsProds {
     position: relative;    
@@ -427,12 +430,25 @@
     margin-left: 4px;
     margin-right: 4px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 576px) {
     .colsNeeds {
         width: 30%;
     }
 }
+.colsNeeds1{   
+    width: 25%; 
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+@media screen and (max-width: 576px) {
+    .colsNeeds1 {
+        width: 40%;
+    }
+}
 .toggleFilters {
+    cursor: pointer;
     width: 80px;
     height: 40px;
     border-bottom-left-radius: 40px;
@@ -449,7 +465,6 @@
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-top: 20px solid #ed1e79;
-    cursor: pointer;
 }
 .masFiltros {
     width: fit-content;
@@ -610,24 +625,37 @@
     cursor:pointer !important;
 }
 .contBodySpecs {
+    height: 100%;
+    position: relative;
+    min-height: 520px;
+    max-height: 520px;
     padding: 20px 20px 35px 20px;
     border-radius: 25px;
     background-color: #5050a0;   
-    transform: translateY(15px); 
+    transform: translateY(10px); 
+    transition: all 0.35s ease-in-out;
 }
 .collapseSpecs {   
     border-radius: 10px;
-    position:absolute;
-    width: 105%;
+    position: absolute;
+    width: 106%;
     bottom:0;
     left: 50%;
     transform: translateX(-50%);
     background-color: transparent;
 }
 .bodySpecs{
+    overflow: hidden;
+    height: 100%;
+    min-height: 470px;
+    max-height: 470px;
+    position: relative;
     background-color: #0a0c33;
     padding: 20px;
     border-radius: 20px;
+}
+.bodySpecs .row {
+    position: relative;
 }
 .footSpecs {
     border-bottom-right-radius: 20px;
@@ -664,4 +692,427 @@
     transform: translate(-50%,0.3rem);
     bottom: 0;
     font-size: 1.8rem;
+}
+.desplegable {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    min-height: 45px;
+    max-height: 45px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    width: 100%;
+    transition: max-height 0.35s ease-in-out, background-color 0.35s ease-in-out, border-radius 0.35s ease-in-out;
+}
+.desplegable:hover {    
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-height: 100%;
+    background-color: transparent;
+}
+.buttonDesplegable {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 45px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    font-size: 44px;
+    margin: 0;
+    background-color: #252572;
+    width: 100%;
+    transition: transform 0.35s ease-in-out, background-color 0.2s ease-in-out, color 0.20s ease-in-out, border-radius 0.35s ease-in-out;
+    padding-bottom: 10px;
+}
+.contDesplegable {
+    display: block;
+    position: relative;
+    border: solid 2px #252572;
+    margin: 0;
+    background-color: transparent;
+    color: transparent;
+    width: 100%;
+    left: 50%;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: transparent;
+    transform: translate(-50%,-105%);
+    transition: all 0.35s ease-in-out;
+}
+.desplegable:hover .contDesplegable,
+.desplegable:hover .buttonDesplegable {
+    transform: translate(-50%,0%);
+    background-color: #ababef;
+    color: #0a0c33;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.desplegable:hover .contDesplegable {
+    border: solid 2px #ed1e79;
+    z-index: 9999 !important;
+}
+.desplegable:hover .buttonDesplegable {
+    transform: translateY(-100%);
+    background-color: transparent;
+    color: transparent;
+}
+.downArrow {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,20px);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* Establece el ancho del borde izquierdo */
+    border-right: 10px solid transparent; /* Establece el ancho del borde derecho */
+    border-top: 10px solid #ed1e79; /* Establece el ancho y el color del borde superior (la flecha) */
+}
+.nameDesple {
+    height: 45px;
+    user-select: none;
+    background-color: #ed1e79;
+    text-align: center;
+    padding: 7px;
+    color: #ffffff;
+    font-family: 'ITC_Franklin_Gothic_Medium';
+}
+.optDesple span{
+    padding-bottom: 6px;
+    padding-top: 3px;
+    cursor: pointer;
+    color: #0a0c33;
+    font-family: 'ITC_Franklin_Gothic_Medium';
+    margin-top: 5px;
+    width: 95%;
+}
+.optDesple span::after {
+    content: "";
+    position: absolute; 
+    left: 50%; 
+    bottom: 0; 
+    width: 93%; 
+    height: 2px; 
+    transform: translate(-50%,-3px);
+    background-color: #000; 
+  }
+.optDesple span:hover{
+    background-color: #ed1e79;
+}
+.optDesple {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.closeDecorator {
+    height: 30px;
+}
+.downDecorator {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ed1e79; /* Puedes cambiar el color aquí */
+}
+.titleDesplegable {
+    padding: 5px;
+}
+.titleDesplegable span {
+    text-transform: uppercase;
+    font-family: 'ITC_Franklin_Gothic_Medium';
+    font-size: 1.1rem;
+}
+.columDesp {
+    height: fit-content;
+    position: relative;
+    width: 100%;
+}
+.pilarDesp {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.rowDesplegable {
+    z-index: inherit;
+}
+.resultsFilters {
+    transform: translateY(40px);
+    padding: 0;
+}
+.rowShowFiltered span{
+    color: #e7166d;
+}
+.rowShowFiltered {
+    height: 130px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin: 0px 0px 26px 0px;
+    padding-left: 50px;
+    background-color: #0a0c33;
+    margin-right: 50px;
+    padding: 0;
+    width: 90vw;
+    left: 50%;
+    transform: translateX(calc(-50% - calc(5vw + 1px)));
+    position: relative;
+}
+.rowShowFiltered .d-flex span{
+    text-align: center;
+    color: #ffffff;
+}
+.rowShowFiltered::after {
+    content: '';
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(13px);
+    width: calc(79% - 3px);
+    background-color: #ffffff;
+}
+.numberProducts h3{
+    font-size: calc(0.5rem + 1.6vw);
+    text-transform: uppercase;
+    color: #ffffff;
+}
+.numberProducts span {
+    color: #ed1e79;
+}
+.marcaLog {
+    position: relative;
+    width: 25%;    
+}
+.marcaLog::after {
+    content: '';
+    height: 80%;
+    width: 2px;
+    right: 0;
+    top: 50%;
+    background-color: #ffffff;
+    transform: translateY(-50%);
+    position: absolute;    
+}
+.nameProducto {
+    position: relative;
+    width: 26%;    
+}
+.nameProducto::after {
+    content: '';
+    height: 80%;
+    width: 2px;
+    right: 0;
+    top: 50%;
+    background-color: #ffffff;
+    transform: translateY(-50%);
+    position: absolute;    
+}
+
+.bestPrice {
+    position: relative;
+    width: 28%;    
+}
+.bestPrice::after {
+    content: '';
+    height: 80%;
+    width: 2px;
+    right: 0;
+    top: 50%;
+    background-color: #ffffff;
+    transform: translateY(-50%);
+    position: absolute;    
+}
+.porcentajeCoinci {
+    padding-left: 3px;
+    padding-right: 3px;
+    position: relative;
+    width: 21%;    
+}
+.porcentajeCoinci img {
+    z-index: 2;
+    position: absolute;
+    max-width: calc(100% - 6px);
+}
+.porcentajeCoinci.first::after {
+    content: '';
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    width: calc(100% + 6px);
+    border-top: 4px solid #d52370;
+    border-right: 4px solid #d52370;
+    border-left: 4px solid #d52370;
+    height: calc(150% + 27px);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #25257278;
+}
+.porcentajeCoinci.segund::after {
+    content: '';
+    width: calc(100% + 6px);
+    border-left: 4px solid #d52370;
+    border-right: 4px solid #d52370;
+    height: calc(100% + 27px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #25257278;
+}
+.porcentajeCoinci.third::after {
+    content: '';
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    width: calc(100% + 6px);
+    border-bottom: 4px solid #d52370;
+    border-right: 4px solid #d52370;
+    border-left: 4px solid #d52370;
+    height: calc(100% + 28px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #25257278;
+}
+.nameIconPorcentaje {
+    height: fit-content;
+    padding-left: 1px;
+    padding-right: 1px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: calc(390% - 12px);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: calc(0.05rem + 1vw + 5px);
+    transform: translateY(calc(100% + 4px));
+    text-transform: uppercase;
+}
+.porcentageCoincidence {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-100%);
+    background-color: beige;
+}
+.porcentageCoincidence span {
+    color: #ffffff;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #e7166d;
+}
+.porcentajeCoinci span {
+    color: #ffffff;
+    z-index: 4;
+    font-family: 'ITC_Franklin_Gothic_Medium';
+    font-weight: bold;
+    font-size: calc(0.2rem + 1.8vw + 10px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+.porcentajeCoinci.mejoresSpan span {
+    top: 59%;
+}
+.mejorProduct span{
+    background: linear-gradient(to bottom, #0a0c33 0%, #5050a0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: none;
+}
+.bestPricesCont {
+    z-index: 5;
+    overflow: hidden;
+    background-color: beige;
+    max-height: 0px;
+    border-radius: 10px;
+    border: solid 1px #ed1e79;
+    background-color: #5050a0;
+    width: 100%;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: max-height 0.35s ease-in-out, opacity 0.35s ease-in-out;
+}
+.pricesShow {
+    position: relative;   
+    padding: 0;
+    background-color: #5050a0;
+}
+.bestPriceButton {
+    font-family: 'ITC_Franklin_Gothic_Medium';
+    text-transform: uppercase;
+    position: absolute;
+    color: #ffffff;
+    width: 90%;
+    font-size: calc(0.2rem + 1.9vw + 2px);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 10px;
+    background-color: #252572;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.35s ease-in-out;
+}
+.bestPriceButton:hover + .bestPricesCont {
+    opacity: 1;
+    max-height: 160px;
+}
+.bestPricesCont:hover{
+    opacity: 1;
+    max-height: 160px;
+}
+.bestPriceButton:hover {
+    background-color: transparent;
+    color: transparent;
+}
+@media screen and (max-width: 576px) {
+    .bestPriceButton {
+        width: 100%;
+    }
+}
+.bestPricesSlice {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.verMasPrices {
+    color: #ffffff;
+    background-color: #0a0c33;
+    font-family: 'ITC_Franklin_Gothic_Medium';
+    text-transform: uppercase;
+}
+.bestPriceTitle {
+    background-color: #ed1e79;
+    color: #ffffff;
+    font-family: 'ITC_Franklin_Gothic_Medium';
+    text-transform: uppercase;
+}
+.buttonSearch {
+    z-index: 0;
+    background-color: #5050a0;
+    text-transform: uppercase;
+    text-align: center;
+    position: absolute;
+    height: 60px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    width: 50%;
+    font-family: 'ITC_Franklin_Gothic_Medium';
 }
