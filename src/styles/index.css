@@ -2,6 +2,9 @@
     font-family: "ITC_Franklin_Gothic_Medium";
     src: url("../fonts/ITC_Franklin_Gothic_Medium.otf");
 }
+* {
+    user-select: none;
+}
 /*NAVBAR*/
 .navbar-toggler-icon {
     width: calc(3.5rem + 3vw);
@@ -635,6 +638,11 @@
     transform: translateY(10px); 
     transition: all 0.35s ease-in-out;
 }
+.contBodySpecs.onlySpecs {
+    width: 90vw;
+    left: 50%;
+    transform: translate(-50%,10px);
+}
 .collapseSpecs {   
     border-radius: 10px;
     position: absolute;
@@ -1050,7 +1058,12 @@
     padding: 0;
     background-color: #5050a0;
 }
+.bestPricesCont div {
+    user-select: none;
+}
 .bestPriceButton {
+    user-select: none;
+    cursor: pointer;
     font-family: 'ITC_Franklin_Gothic_Medium';
     text-transform: uppercase;
     position: absolute;
@@ -1103,7 +1116,7 @@
     text-transform: uppercase;
 }
 .buttonSearch {
-    z-index: 0;
+    cursor: pointer;
     background-color: #5050a0;
     text-transform: uppercase;
     text-align: center;

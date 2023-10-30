@@ -82,19 +82,19 @@ const OnlySpecs = ({ product }) => {
     }
     return (
         <div>                          
-                <div className='contBodySpecs onlySpecs'>
-                    <div className="bodySpecs onlySpecs">                        
-                        <div className='row'>
-                            {Object.values(specsCelular).map(spec => (
-                            <Desplegable
-                                key={spec.id} // Asegúrate de proporcionar una clave única
-                                specsDict={spec}
-                            />
-                            ))}        
-                        </div>  
-                        <div className='buttonSearch d-flex align-items-center justify-content-center'><div>buscar</div></div>                  
-                    </div>
+            <div className='contBodySpecs onlySpecs'>
+                <div className="bodySpecs onlySpecs">                        
+                    <div className='row'>
+                        {Object.values(specsCelular).map(spec => (
+                        <Desplegable
+                            key={spec.id} // Asegúrate de proporcionar una clave única
+                            specsDict={spec}
+                        />
+                        ))}        
+                    </div>  
+                    <div className='buttonSearch d-flex align-items-center justify-content-center'><div>buscar</div></div>                  
                 </div>
+            </div>
         </div>   
     )
 }
