@@ -287,10 +287,13 @@
     margin-bottom: 25px;
 }
 .horizontal-slider{
+    font-size: 0px;
+    user-select: none;
     width: 100%;
     height: 60px;
 }
 .horizontal-slider .example-track {
+    user-select: none;
     top: 50%;
     transform: translateY(-50%);
     height: 10px;
@@ -320,6 +323,7 @@
     cursor: pointer;
 }
 .example-thumb.example-thumb-1{
+    user-select: none;
     transform: translate(-40px,-55px);
     height: 110px;
     width: 110px;
@@ -344,6 +348,7 @@
 }
 /*SliderDer*/
 .example-thumb.example-thumb-2 {
+    content: '';
     background-image: url('../images/chevron-right-icon.svg');
     height: 100px;
     background-size: 100% auto;
