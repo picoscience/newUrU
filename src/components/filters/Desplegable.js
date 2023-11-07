@@ -15,7 +15,7 @@ const Desplegable = ({ specsDict }) => {
     }
 
     return (
-        <div className='col-6 col-md-4'>
+        <div className='col-6 col-md-4 col-lg-6 col-xl-4 col-xxl-3'>
             <div className='pilarDesp'>
                 <div className='columDesp'>
                     <div className='titleDesplegable'>

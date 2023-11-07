@@ -1,4 +1,12 @@
 import React from 'react'
+import usoBasico from '../../images/usos/Basico.svg'
+import usoColegial from '../../images/usos/Colegial.svg'
+import usoDisenio from '../../images/usos/Disenio.svg'
+import usoEdirenders from '../../images/usos/Edirenders.svg'
+import usoTecnologia from '../../images/usos/esTecnologia.svg'
+import usoGaming from '../../images/usos/Gaming.svg'
+import usoOficina from '../../images/usos/Oficina.svg'
+import usoUniversitario from '../../images/usos/Universitario.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { setPcQ1 } from '../../features/pc/pcSlice'
 import { setPortatilQ2 } from '../../features/portatil/portatilSlice'
@@ -14,34 +22,36 @@ const UsosProductos = ({ product }) => {
     let tempVar = null
     let questions = null
     const questionsPc = [
-        { id: 1, text: 'Q1PC' },
-        { id: 2, text: 'Q2PC' },
-        { id: 3, text: 'Q3PC' },
-        { id: 4, text: 'Q4PC' },
+        { id: 1, text: 'Q1PC' , img: usoBasico },
+        { id: 2, text: 'Q2PC' , img: usoTecnologia },
+        { id: 3, text: 'Q3PC' , img: usoGaming },
+        { id: 4, text: 'Q4PC' , img: usoUniversitario },
     ]
     const questionsPort = [
-        { id: 1, text: 'Q1Port' },
-        { id: 2, text: 'Q2Port' },
-        { id: 3, text: 'Q3Port' },
-        { id: 4, text: 'Q4Port' },
-        { id: 5, text: 'Q5Port' },
+        { id: 1, text: 'básico' , img: usoBasico },
+        { id: 2, text: 'colegial' , img: usoColegial },
+        { id: 3, text: 'diseño' , img: usoDisenio },
+        { id: 4, text: 'renders' , img: usoEdirenders },
+        { id: 5, text: 'tech' , img: usoTecnologia },
+        { id: 6, text: 'gaming' , img: usoGaming },
+        { id: 7, text: 'universidad' , img: usoUniversitario },
     ]
     const questionsCel = [
-        { id: 1, text: 'Q1PCEL' },
-        { id: 2, text: 'Q2PCEL' },
-        { id: 3, text: 'Q3PCEL' },
-        { id: 4, text: 'Q4PCEL' },
-        { id: 5, text: 'Q5PCEL' },
-        { id: 6, text: 'Q6PCEL' },
+        { id: 1, text: 'Q1PCEL' , img: usoBasico },
+        { id: 2, text: 'Q2PCEL' , img: usoColegial },
+        { id: 3, text: 'Q3PCEL' , img: usoDisenio },
+        { id: 4, text: 'Q4PCEL' , img: usoTecnologia },
+        { id: 5, text: 'Q5PCEL' , img: usoOficina },
+        { id: 6, text: 'Q6PCEL' , img: usoGaming },
     ]
     const questionsTab = [
-        { id: 1, text: 'Q1Tab' },
-        { id: 2, text: 'Q2Tab' },
-        { id: 3, text: 'Q3Tab' },
-        { id: 4, text: 'Q4Tab' },
-        { id: 5, text: 'Q5Tab' },
-        { id: 6, text: 'Q6Tab' },
-        { id: 7, text: 'Q7Tab' },
+        { id: 1, text: 'Q1Tab' , img: usoBasico },
+        { id: 2, text: 'Q2Tab' , img: usoEdirenders },
+        { id: 3, text: 'Q3Tab' , img: usoOficina },
+        { id: 4, text: 'Q4Tab' , img: usoGaming },
+        { id: 5, text: 'Q5Tab' , img: usoColegial },
+        { id: 6, text: 'Q6Tab' , img: usoUniversitario },
+        { id: 7, text: 'Q7Tab' , img: usoOficina },
     ]
     if (product === 'portatil') {
         tempVar = portatil.Q2
@@ -75,14 +85,21 @@ const UsosProductos = ({ product }) => {
     }
     return (
         <>
+        <div className='row justify-content-center align-items-start'>
             {questions.map((question) => (
                 <div key={question.id} className='col-3 colsNeeds p-0'>
                     <div onClick={() => handleClick(question.id)} className={`contUserNeeds ${tempVar === question.id ? 'active' : ''}`}>
-                        <span>{question.text}</span>
-                        <div className='semiBorder'></div>
+                        <span className='d-lg-none'>{question.text}</span>
+                        <div className='semiBorder d-lg-none'></div>
+                        <div className='dektopUsosOptions d-none d-lg-flex justify-content-center'>
+                            <img src={question.img} alt='usoDemo'/>
+                            <span>{question.text}</span>
+                        </div>
                     </div>
                 </div>
             ))}
+        </div>
+
         </>
     )
 }

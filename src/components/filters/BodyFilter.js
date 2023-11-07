@@ -4,6 +4,9 @@ import FilterProduct from './FilterProduct'
 import bootstrap from 'bootstrap/dist/js/bootstrap.bundle'
 import ButtonSpecs from './ButtonSpecs'
 import ShowFiltered from './ShowFiltered'
+import downArrow from '../../images/chevron-down-icon.svg'
+import upArrow from '../../images/chevron-up-icon.svg'
+import FiltersDesktop from './FiltersDesktop'
 
 const BodyFilter = ({ product }) => {
     const [flag,setFlag] = useState(false)
@@ -44,19 +47,22 @@ const BodyFilter = ({ product }) => {
 
     return (
         <>
-        <div className='row cuerpoFilter'>
-            <div className={`container-fluid contCuerpoFilter ${product === 'pc' ? 'izquierda' : product === 'tablet' ? 'derecha' : ''}`}>
-                <div className='row p-3 pb-0'>
-                    <UserNeeds/>
-                </div>
-                <div className='row mt-2 mb-2 p-0 justify-content-center text-center'>
-                    <span className={`text-center masFiltros ${(flag) ? 'active' : ''}`}>más opciones</span>
-                </div>                
+        <div className='row justify-content-center cuerpoFilter ps-lg-3 pe-lg-3'>
+            <div className={`col-12 col-xl-11 col-xxl-10 contCuerpoFilter ${product === 'pc' ? 'izquierda' : product === 'tablet' ? 'derecha' : ''} ${(flag) ? 'active' : ''}`}>
+                <div className='container-fluid p-0 m-0'>
+                    <div className='row p-3 pb-0'>
+                        <UserNeeds product={product} flag={flag}/>
+                    </div>
+                    <div className='row mt-2 mb-2 p-0 justify-content-center text-center'>
+                        <span className={`text-center masFiltros ${(flag) ? 'active' : ''}`}>más opciones</span>
+                    </div>     
+                </div>               
             </div>                                              
         </div>                              
         <div className='row moreFilters justify-content-center'>
             <div onClick={()=>handleClickClose()} className={`toggleFilters d-flex justify-content-center align-items-start ${(flag) ? 'active' : ''}`}>
-                <span></span>
+                <span className='d-lg-none'></span>
+                <img src={downArrow} alt='chvronDown' className='d-none d-lg-flex chevronDown'/>
             </div>
         </div>  
         <div className='container-fluid'>
@@ -65,17 +71,27 @@ const BodyFilter = ({ product }) => {
                     <div className="col p-0">
                         <div id="collapseMoreOptions" className='collapse multi-collapse p-0'>
                             <div className="card card-body m-0 p-0">
-                                <div className='closeButton'></div>
-                                <div className='closeButton1'>
+                                <div className='closeButton d-lg-none'></div>
+                                <div className='closeButton1 d-lg-none'>
                                     <span onClick={() => handleClickClose()} >X</span>
                                 </div>
                                 <div className='closeText'></div>
-                                <div className='closeText1' onClick={() => handleClickClose()} >
+                                <div className='closeText1' onClick={() => handleClickClose()}>
                                     menos opciones
+                                    <img src={upArrow} alt='iconClose' className='d-none d-lg-flex upArrowClose'></img>
                                 </div>
-                                <div className='contentBodyOptions'>
-                                    <div className='rowBodyOptions'>
-                                        <FilterProduct product={product}/>
+                                <div className='row p-0 m-0 justify-content-center align-items-center'>
+                                    <div className='contentBodyOptions col-12 col-xl-11 col-xxl-10'>
+                                        <div className='rowBodyOptions row justify-content-center'>
+                                            <div className='closeText1Line d-none d-lg-flex mt-4 mb-3'></div>
+                                            <div className={`col-12 col-lg-6 ${(product==='celular') ? 'divisorDesktop' : ''}`}>
+                                                <FilterProduct product={product}/>
+                                            </div>
+                                            <div className={`d-none d-lg-inline col-6 ${(product==='celular') ? 'divisorDesktop1' : ''}`}>
+                                                <FiltersDesktop product={product}/>
+                                            </div>
+                                            <div className='closeText1Line d-none d-lg-flex mb-5 mt-3'></div>
+                                        </div>
                                     </div>
                                 </div>
                                 <ButtonSpecs product={product}/>

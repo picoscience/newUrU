@@ -5,13 +5,13 @@ import FloatSpecs from './FloatSpecs'
 const FilterSpecs = (props) => {
     const { onlySpecs, product }= props
     return (
-        <>
+        <div className='d-lg-none'>
         {onlySpecs ? 
             <OnlySpecs product={product}/>
         :
             <FloatSpecs product={product}/>
         }
-        </>
+        </div>
     )
 }
 

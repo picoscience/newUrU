@@ -10,14 +10,19 @@ const ButtonSpecs = (props) => {
     return (
         <>
             {onlyFilSpecs ? (
-                <></>
+                <>
+                <div className='buttonSearchPC d-none d-lg-flex'>aplicar búsqueda</div>
+                </>
             ) : (
-            <div className='openSpecs' data-bs-toggle="collapse" data-bs-target="#collapseSpecs">
+            <>
+            <div className='openSpecs d-lg-none' data-bs-toggle="collapse" data-bs-target="#collapseSpecs">
                 <div className='text-center'>filtros avanzados</div>
                 <div className='row justify-content-center align-items-center'>
                 <div className='buttonSpecs'></div>
                 </div>
             </div>
+            <div className='buttonSearchPC d-none d-lg-flex'>aplicar búsqueda</div>
+            </>            
             )}
         </>
     )
