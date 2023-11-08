@@ -269,6 +269,11 @@
         width: 80%;
     }
 }
+@media screen and (min-width: 1620px) {    
+    .contBest3Desktop {
+        width: calc(33% - 6px) !important;
+    }
+}
 .floatCalifDesktop {
     display: block;
     z-index: 1;
@@ -278,7 +283,29 @@
     right: 11px;
     bottom: 12px;
     background-color: #0a0c33;
-    border-top-left-radius: 40px;
+    border-top-left-radius: 35px;
+}
+.numberPorcenDesktop {
+    z-index: 2;
+    display: inline;
+    bottom: 32%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    position: absolute;
+    color: #ababef;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+.floatCalifDesktop.first .numberPorcenDesktop {
+    background: linear-gradient(to bottom, #0a0c33 0%, #5050a0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: none;
+}
+.numberPorcenDesktop span {
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 .floatCalifDesktop img {
     padding: 3px;
@@ -297,7 +324,7 @@
     width: 100%;
 }
 .titlePorcenDektop span {
-    margin-top: 10px;
+    margin-top: 17px;
     text-transform: uppercase;
     font-size: 1rem;
     line-height: 1rem;
@@ -325,13 +352,9 @@
     font-family: 'ITC_Franklin_Gothic_Medium';
 }
 .best3Desktop {
-    margin-left: 12px;
-    margin-right: 12px;
-    margin-bottom: 25px;
     position: relative;
     background-color: #252572;
-    min-width: 400px;
-    width: 30%;
+    width: 100%;
     min-height: 400px;
     border: solid 3px #ed1e79;
 }
@@ -339,22 +362,67 @@
     position: relative;
     height: 75%;
     padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 .subContImg3 {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #ababef;
     height: 100%;
 }
+.precioBest3Desktop {
+    margin-top: 20px;
+    width: 100%;
+    height: 150px;
+    position: relative;
+}
+.numberPrecio {
+    height: 50px;
+    position: relative;
+    width: 100%;
+}
+.numberPrecio span{
+    position: absolute;
+    font-size: 2rem;
+    color: #ffffff;
+    left: 40%;
+    transform: translateX(-50%);
+}
+.buttonComercio {
+    width: 100%;
+    position: relative;
+}
+.buttonComercio span {
+    text-transform: lowercase;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background-color: #5a5aa3;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: absolute;
+    left: 40%;
+    transform: translateX(-50%);
+}
+.buttonComercio span:first-letter {
+    text-transform: capitalize;
+}
 .subContImg3 img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 50px;
+    margin-bottom: -10px;
     padding-left: 10px;
     padding-right: 10px;
     max-width: 100%;
     height: auto;
 }
 .contDescBest3 {
+    padding-right: 24px !important;
+    padding: 12px;
     font-size: 1rem;
     line-height: 1rem;
     width: 70%;
@@ -364,11 +432,205 @@
 .resultsFiltersDesktop {
     width: 100%;
 }
+.contBest3Desktop {
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 50px;
+    width: calc(50% - 6px);
+    min-width: 400px;
+    position: relative;
+}
+.otherSellersDesktop {
+    z-index: 10;
+    position: relative;
+    width: 190px;
+    left: 100%;
+    bottom: -20px;
+    transform: translateX(-100%);
+}
+.contOthersSellersDekstop {
+    cursor: pointer;
+    right: 0;
+    width: 100%;
+    display: grid;
+    align-content: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.75);
+    position: relative;
+    color: #ffffff;
+    background-color: #5050a0;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+}
+.contOthersSellersDekstop span {
+    text-transform: lowercase;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+    margin-bottom: 4px;
+}
+.contOthersSellersDekstop span::first-letter {
+    text-transform: capitalize;
+}
+.contOthersSellersDekstop img {
+    height: 12px;
+    width: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.cantidadResults {
+    font-size: 1.3rem;
+    color: #ffffff;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: 'ITC_Franklin_Gothic_Medium';
+}
+.cantidadResults::first-letter {
+    text-transform: capitalize;
+}
+.bodyOthersSellerDesktop {
+    overflow: hidden;
+    max-height: 0px;
+    min-width: 400px;
+    position: absolute;
+    bottom: -3px;
+    left: 35%;
+    border-radius: 15px;
+    transform: translate(-50%,100%);
+    background-color: transparent;    
+    transition: all 0.35s ease-in-out;
+    border: solid 2px transparent;
+}
+.bodyOthersSellerDesktop.active {
+    max-height: 300px;
+    background-color: #0a0c33;
+    border: solid 2px #ed1e79;
+    padding-top: 7px;
+    padding-bottom: 15px;
+}
+.buttonComercioDesktop {
+    border-radius: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #ffffff;
+    text-transform: lowercase;
+    text-align: center;
+    width: 80%;
+    height: 100%;
+    background-color: #5050a0;
+}
+.buttonComercioDesktop::first-letter {
+    text-transform: capitalize;
+}
+.columRowOthers {
+    position: relative;
+}
+.columRowOthers.precio {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+.columRowOthers.logo {
+    text-transform: uppercase;
+    color: #ffffff;
+}
+.columRowOthers.precio::before, .columRowOthers.butCom::before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 1px;
+    left: 0;
+    background-color: #ffffff;
+    border-left: solid 1px #ffffff;
+}
+.columRowOthers::after {
+    content: '';
+    width: calc(100% - 20px);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    height: 1px;
+    background-color: #ffffff;
+    border-top: solid 1px #ffffff;
+}
+.orderResultsDesktop {
+    background-color: beige;
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    transform: translateY(-100%);
+}
+.showProdDesktop {
+    display: grid;
+    align-items: center;
+    width: 20%;
+    padding: 15px;
+    padding-bottom: 0px !important;
+}
+.bodyShowProdDesktop {
+    width: 100%;
+    height: 100%;
+}
+.rowShowProdDesktop {
+    padding-left: 18px;
+    padding-right: 18px;
+}
+.izqBarShowBody , .contentShowBody, .derBarShowBody {
+    background-color: #ababef;
+}
+.precioProds {
+    text-align: center;
+    padding-bottom: 12px;
+    font-size: 2rem;
+    background-color: #0a0c33;
+    color: #ffffff;
+}
+.bodyProds {
+    position: relative;
+}
+.izqBarShowBody {
+    left: 0;
+    position: absolute;
+    width: 7%;
+    height: 100%;
+}
+.derBarShowBody {
+    top: 0;
+    position: absolute;
+    right: 0;
+    width: 7%;
+    height: 100%;
+}
+.contentShowBody {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    width: 78%;
+}
 .showDesktopFilters {
+    border-radius: 35px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(180deg, rgba(10,12,51,1) 0%, rgba(37,37,114,1) 50%, rgb(163, 64, 163) 100%);
+}
+.numberProductsDesktop h3 {
+    margin-left: 12px;
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-transform: uppercase;    
+}
+.numberProductsDesktop h3 span{
+    color: #ed1e79;
 }
 .upArrowClose {
     position: absolute;

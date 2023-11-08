@@ -1,9 +1,19 @@
 import React from 'react'
+import ItemProdDesktop from './ItemProdDesktop'
 
 const ShowDesktopBest = () => {
     return (
-        <div>
-            ShowDesktopBest
+        <div className='row m-0 rowShowProdDesktop'>
+            <ItemProdDesktop />
+            <ItemProdDesktop />
+            <ItemProdDesktop />
+            <ItemProdDesktop />
+            <ItemProdDesktop />
+            <ItemProdDesktop />
+            <ItemProdDesktop />
+            <ItemProdDesktop />
+            <ItemProdDesktop />
+            <ItemProdDesktop />
         </div>
     )
 }
