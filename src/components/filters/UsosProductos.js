@@ -37,12 +37,11 @@ const UsosProductos = ({ product }) => {
         { id: 7, text: 'universidad' , img: usoUniversitario },
     ]
     const questionsCel = [
-        { id: 1, text: 'Q1PCEL' , img: usoBasico },
-        { id: 2, text: 'Q2PCEL' , img: usoColegial },
-        { id: 3, text: 'Q3PCEL' , img: usoDisenio },
-        { id: 4, text: 'Q4PCEL' , img: usoTecnologia },
-        { id: 5, text: 'Q5PCEL' , img: usoOficina },
-        { id: 6, text: 'Q6PCEL' , img: usoGaming },
+        { id: 1, text: 'redes y whatsapp' , img: usoBasico },
+        { id: 2, text: 'influencer' , img: usoDisenio },
+        { id: 3, text: 'gamer' , img: usoGaming },
+        { id: 4, text: 'videollamadas, correos y docs' , img: usoBasico },
+        { id: 5, text: 'fotografía' , img: usoOficina },
     ]
     const questionsTab = [
         { id: 1, text: 'Q1Tab' , img: usoBasico },

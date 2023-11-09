@@ -7,10 +7,14 @@ const initialState = {
     rom:0, 
     os:0,
     size:0,
-    camera:0,
     marca:0,
+    capacidad:0,
+    red:0,
+    addOn:0,
     //
     Q1:3,//uso
+    Q2:0,
+    Q3:0,
 }
 
 export const celularSlice = createSlice({
@@ -35,14 +39,26 @@ export const celularSlice = createSlice({
         setCelularSize: (state, action) => {
             state.size = action.payload
         },
-        setCelularCamera: (state, action) => {
-            state.camera = action.payload
-        },
         setCelularMarca: (state, action) => {
             state.marca = action.payload
         },
+        setCelularCapacidad: (state, action) => {
+            state.capacidad = action.payload
+        },
+        setCelularRed: (state, action) => {
+            state.red = action.payload
+        },
+        setCelularAddON: (state, action) => {
+            state.addOn = action.payload
+        },
         setCelularQ1: (state, action) => {
             state.Q1 = action.payload
+        },
+        setCelularQ2: (state, action) => {
+            state.Q2 = action.payload
+        },
+        setCelularQ3: (state, action) => {
+            state.Q3 = action.payload
         },
     }
 })
@@ -54,9 +70,13 @@ export const {
     setCelularRom,
     setCelularOs,
     setCelularSize,
-    setCelularCamera,
     setCelularMarca,
+    setCelularCapacidad,
+    setCelularRed,
+    setCelularAddON,
     setCelularQ1,
+    setCelularQ2,
+    setCelularQ3,
 } = celularSlice.actions
 
 

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-const Desplegable = ({ specsDict }) => {    
+const Desplegable = ({ specsDict }) => {  
+    const [selectorDesp,setSelectorDesp] = useState(false)  
     const dispatch = useDispatch()
     const {          
         name,
@@ -14,6 +15,10 @@ const Desplegable = ({ specsDict }) => {
         dispatch(sett(val))
     }
 
+    const handleSelect = () => {
+        setSelectorDesp(!selectorDesp)
+    }
+
     return (
         <div className='col-6 col-md-4 col-lg-6 col-xl-4 col-xxl-3'>
             <div className='pilarDesp'>
@@ -22,9 +27,9 @@ const Desplegable = ({ specsDict }) => {
                         <span>{name}</span>
                     </div>
                     <div className='rowDesplegable'>
-                        <div className="desplegable">
+                        <div className={`desplegable ${(selectorDesp) ? 'active' : ''}`}>
                             <div className="contDesplegable">
-                                <div className='nameDesple d-flex justify-content-center align-items-center'>
+                                <div className='nameDesple d-flex justify-content-center align-items-center' onClick={() => handleSelect()}>
                                     <span>{state}</span>
                                 </div>
                                 {Object.values(options).map(option => (
@@ -37,7 +42,7 @@ const Desplegable = ({ specsDict }) => {
                                     <div className='downDecorator'></div>                                            
                                 </div>                                      
                             </div>
-                            <div className="buttonDesplegable">
+                            <div className="buttonDesplegable" onClick={() => handleSelect()}>
                                 <div className='downArrow'></div>
                             </div>
                         </div>

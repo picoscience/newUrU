@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setPortatilQ1, setPortatilQ3, setPortatilQ4 } from '../../features/portatil/portatilSlice'
 import { setPcQ2, setPcQ3 } from '../../features/pc/pcSlice'
 import { setTabletQ2 } from '../../features/tablet/tabletSlice'
-import FilterSpecs from './FilterSpecs'
+import { setCelularQ2, setCelularQ3 } from '../../features/celular/celularSlice'
+import FloatSpecs from './FloatSpecs'
 //
 import despAuto from '../../images/Desplazamiento/Automovil.svg'
 import despBici from '../../images/Desplazamiento/Bicicleta.svg'
@@ -18,10 +19,11 @@ import almMusica from '../../images/TipoArchivos/Musica.svg'
 import almVideo from '../../images/TipoArchivos/Video.svg'
 
 
-const FilterProduct = ({ product }) => {
+const FilterProduct = ({ product, specs }) => {
     const pc = useSelector((state) => state.pc)
     const portatil = useSelector((state) => state.portatil)
     const tablet = useSelector((state) => state.tablet)
+    const celular = useSelector((state) => state.celular)
     const dispatch = useDispatch()
     let subQuestions = null
     const SubQuestionsPc = {
@@ -55,7 +57,24 @@ const FilterProduct = ({ product }) => {
             5:{ id: 5, text: 'documentos', state:portatil.Q4, setter:setPortatilQ4, img:almDocs},
         },
     }
-    const SubQuestionsCel = null
+    const SubQuestionsCel = {
+        'conexión eléctrica necesaria': {          
+            1:{ id: 1, text: 'en todo momento', state:celular.Q3, setter:setCelularQ3, img:despAuto},
+            2:{ id: 2, text: 'muchas veces', state:celular.Q3, setter:setCelularQ3, img:despAuto},
+            3:{ id: 3, text: 'pocas veces', state:celular.Q3, setter:setCelularQ3, img:despAuto},
+        },
+        'prefiero los celulares:': {          
+            1:{ id: 1, text: 'Samsung', state:celular.Q2, setter:setCelularQ2, img:despCamina},
+            2:{ id: 2, text: 'Apple', state:celular.Q2, setter:setCelularQ2, img:despBici},
+            3:{ id: 3, text: 'Xiaomi', state:celular.Q2, setter:setCelularQ2, img:despMoto},
+            4:{ id: 4, text: 'Honor', state:celular.Q2, setter:setCelularQ2, img:despAuto},
+            5:{ id: 5, text: 'Vivo', state:celular.Q2, setter:setCelularQ2, img:despBus},
+            6:{ id: 6, text: 'Oppo', state:celular.Q2, setter:setCelularQ2, img:despBus},
+            7:{ id: 7, text: 'Tecno', state:celular.Q2, setter:setCelularQ2, img:despBus},
+            8:{ id: 8, text: 'Motorola', state:celular.Q2, setter:setCelularQ2, img:despBus},
+        },
+        
+    }
     const SubQuestionsTab = {
         'SUB TABLET 1': {          
             1:{ id: 1, text: 'SQ1', state:tablet.Q2, setter:setTabletQ2, img:despCamina},
@@ -80,8 +99,7 @@ const FilterProduct = ({ product }) => {
     return (
         <div className='container-fluid'>
             <div>                
-                {subQuestions !== null 
-                &&                    
+                {                    
                 Object.keys(subQuestions).map((questionKey) => (
                     <div key={questionKey} className='row justify-content-center'>
                         <div className='row titlePrice mb-4'>
@@ -104,10 +122,12 @@ const FilterProduct = ({ product }) => {
                     </div>
                 ))
                 }
-                {subQuestions !== null ?
-                <FilterSpecs onlySpecs={false} product={product}/>   
-                    :
-                <FilterSpecs onlySpecs={true} product={product}/>
+                {
+                <div className='d-lg-none'>
+                {
+                    <FloatSpecs product={product} specs={specs}/>
+                }
+                </div>
                 }
             </div>
         </div>

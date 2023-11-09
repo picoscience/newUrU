@@ -61,6 +61,9 @@
     height: 90%;
     background-color: #0a0c33;
 }
+.navbar {
+    padding: 0 !important;
+}
 @media screen and not (min-width: 992px) {
     .navbar-nav a::after {   
         display: none; 
@@ -262,17 +265,44 @@
         font-size: 1.1rem !important;
         width: fit-content !important;
     }
-    .rowBodyOptions .divisorDesktop {
-        display: none;
+    .contDesplegable {
+        padding-bottom: 10px;
     }
-    .divisorDesktop1 {
-        width: 80%;
+    .buttonDesplegable {
+        border-radius: 10px !important;
+        background-color: #5050a0 !important;
+    }
+    .closeDecorator {
+        display: none !important; 
+    }
+    .optDesple span{
+        color: #ffffff !important;
+    }
+    .optDesple span::after {
+        border: solid 2px #ffffff !important;
+        background-color: #ffffff !important; 
+    }
+    .desplegable.active .contDesplegable,
+    .desplegable.active .buttonDesplegable {
+        background-color: #0a0c33 !important;
     }
 }
 @media screen and (min-width: 1620px) {    
     .contBest3Desktop {
         width: calc(33% - 6px) !important;
     }
+}
+.separatorAfterDesktop {
+    position: relative;
+}
+.separatorAfterDesktop::after {
+    content: '';
+    width: 1px;
+    height: 100%;
+    border-left: solid 1px #ffffff;
+    background-color: #ffffff;
+    position: absolute;
+    right: 0;
 }
 .floatCalifDesktop {
     display: block;
@@ -389,6 +419,7 @@
     transform: translateX(-50%);
 }
 .buttonComercio {
+    cursor: pointer;
     width: 100%;
     position: relative;
 }
@@ -515,6 +546,7 @@
     padding-bottom: 15px;
 }
 .buttonComercioDesktop {
+    cursor: pointer;
     border-radius: 7px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -567,10 +599,33 @@
     right: 20px;
     transform: translateY(-100%);
 }
+.titleItemsBody {
+    width: 100%;
+    position: relative;
+}
+.logoBodyItem {
+    position: relative;
+    top: 0;
+    left: 10px;
+    text-transform: capitalize;
+    color: #0a0c33;
+    font-family: 'ITC_Franklin_Gothic_Medium';
+}
+.nameBodyItem {
+    color: #0a0c33;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'ITC_Franklin_Gothic_Medium';
+}
 .showProdDesktop {
     display: grid;
     align-items: center;
-    width: 20%;
+    width: 25%;
     padding: 15px;
     padding-bottom: 0px !important;
 }
@@ -609,12 +664,20 @@
     height: 100%;
 }
 .contentShowBody {
-    padding-top: 15px;
+    padding-top: 8px;
     padding-bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     position: relative;
     width: 78%;
+}
+.contentShowBody img {
+    padding-top: 10px;
+    width: 100%;
+    height: auto;
+    padding-left: 14px;
+    padding-right: 14px;
+    position: relative;
 }
 .showDesktopFilters {
     border-radius: 35px;
@@ -1437,10 +1500,7 @@
     cursor:pointer !important;
 }
 .contBodySpecs {
-    height: 100%;
     position: relative;
-    min-height: 650px;
-    max-height: 650px;
     padding: 20px 20px 35px 20px;
     border-radius: 25px;
     background-color: #5050a0;   
@@ -1464,11 +1524,10 @@
 .bodySpecs{
     overflow: hidden;
     height: 100%;
-    min-height: 600px;
-    max-height: 600px;
     position: relative;
     background-color: #0a0c33;
     padding: 20px;
+    padding-bottom: 75px;
     border-radius: 20px;
 }
 .bodySpecs .row {
@@ -1522,13 +1581,14 @@
     width: 100%;
     transition: max-height 0.35s ease-in-out, background-color 0.35s ease-in-out, border-radius 0.35s ease-in-out;
 }
-.desplegable:hover {    
+.desplegable.active {    
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     max-height: 100%;
     background-color: transparent;
 }
 .buttonDesplegable {
+    cursor: pointer;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     height: 45px;
@@ -1558,19 +1618,20 @@
     transform: translate(-50%,-105%);
     transition: all 0.35s ease-in-out;
 }
-.desplegable:hover .contDesplegable,
-.desplegable:hover .buttonDesplegable {
+.desplegable.active .contDesplegable,
+.desplegable.active .buttonDesplegable {
     transform: translate(-50%,0%);
     background-color: #ababef;
     color: #0a0c33;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-.desplegable:hover .contDesplegable {
+.desplegable.active .contDesplegable {
+    position: relative;
     border: solid 2px #ed1e79;
     z-index: 9999 !important;
 }
-.desplegable:hover .buttonDesplegable {
+.desplegable.active .buttonDesplegable {
     transform: translateY(-100%);
     background-color: transparent;
     color: transparent;
@@ -1610,9 +1671,10 @@
     bottom: 0; 
     width: 93%; 
     height: 2px; 
+    border: solid 2px #000;
     transform: translate(-50%,-3px);
     background-color: #000; 
-  }
+}
 .optDesple span:hover{
     background-color: #ed1e79;
 }
@@ -1651,7 +1713,7 @@
 }
 .pilarDesp {
     position: relative;
-    height: 270px;
+    min-height: 270px;
     width: 100%;
 }
 .rowDesplegable {

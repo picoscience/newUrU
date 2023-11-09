@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid d-flex justify-content-center align-items-center">
-                <div className='col-12 col-lg-9 col-xl-8'>
+                <div className='col-12 col-lg-12 col-xl-11 col-xxl-10'>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
                     <span className="navbar-toggler-icon"></span>
                 </button>
