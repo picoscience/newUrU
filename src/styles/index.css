@@ -307,17 +307,25 @@
         color: #ffffff;
         text-align: center;
     }
+    .separatorAfterDesktop::after {
+        content: '' !important;
+    }
 }
 @media screen and (min-width: 1620px) {    
     .contBest3Desktop {
         width: calc(33% - 6px) !important;
     }
 }
+@media screen and not (min-width: 1200px) {    
+    .orderResultsDesktop  {
+        right: 115px !important;
+    }
+}
 .separatorAfterDesktop {
     position: relative;
 }
 .separatorAfterDesktop::after {
-    content: '';
+    content: none;
     width: 1px;
     height: 100%;
     border-left: solid 1px #ffffff;
@@ -1366,8 +1374,8 @@
     position: absolute;
     width: 305px;
     bottom: -3px !important;
-    left: -10px !important;
-    right: auto !important;
+    left: auto !important;
+    right: -11px !important;
     transform: translate(0,100%) !important;
 }
 .bodyNumCols {
@@ -1985,6 +1993,7 @@
     padding: 5px;
 }
 .titleDesplegable span {
+    white-space: nowrap;
     text-transform: uppercase;
     font-family: 'ITC_Franklin_Gothic_Medium';
     font-size: 1.1rem;
