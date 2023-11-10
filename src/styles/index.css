@@ -2312,3 +2312,31 @@
     margin-top: 50px !important;
     margin-bottom: 30px !important;
 }
+.itemPagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 48px;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-family: 'ITC_Franklin_Gothic_Medium';
+    background-color: #ed1e79;
+}
+.paginationLeft, .paginationRight {
+    width: auto;
+    height: 25px;
+}
+.paginationLeft img, .paginationRight img{
+    width: auto;
+    height: 100%;
+}
+.itemPagination.active {
+    border: solid 1px #ed1e79;    
+    background-color: #252572;
+}
+.itemPagination.active span{
+    color: #ffffff;
+}
