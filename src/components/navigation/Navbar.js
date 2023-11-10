@@ -16,13 +16,14 @@ const Navbar = () => {
                             </a>
                             <span className='ms-5 d-none d-lg-flex brandName'>UrU</span>
                         </div>
-                        <div className='col-12 col-lg-6 d-flex'>
+                        <div className='col-12 col-lg-6 d-flex linksNavbar'>
                             <div className="collapse navbar-collapse justify-content-start justify-content-lg-end" id="navbarNavAltMarkup">
                                 <div className="navbar-nav">
-                                    <a className="nav-link active" href="$" aria-current="page">favoritos</a>
+                                    <a className="nav-link" href="$">favoritos</a>
                                     <a className="nav-link" href="$">blog</a>
                                     <a className="nav-link" href="$">nosotros</a>
-                                    <a className="nav-link" href="$">contacto</a>
+                                    <a className="nav-link" href="$">contacto</a>                                    
+                                    <a className="nav-link session" href="$">iniciar sesión</a>                                    
                                 </div>
                             </div>
                         </div>

@@ -37,10 +37,10 @@ const UsosProductos = ({ product }) => {
         { id: 7, text: 'universidad' , img: usoUniversitario },
     ]
     const questionsCel = [
-        { id: 1, text: 'redes y whatsapp' , img: usoBasico },
+        { id: 1, text: 'redes y wa' , img: usoBasico },
         { id: 2, text: 'influencer' , img: usoDisenio },
         { id: 3, text: 'gamer' , img: usoGaming },
-        { id: 4, text: 'videollamadas, correos y docs' , img: usoBasico },
+        { id: 4, text: 'videollamadas y docs' , img: usoBasico },
         { id: 5, text: 'fotografía' , img: usoOficina },
     ]
     const questionsTab = [
