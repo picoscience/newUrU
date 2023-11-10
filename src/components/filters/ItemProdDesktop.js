@@ -1,9 +1,23 @@
 import React from 'react'
 import pcImgDemo from '../../images/port.png'
 
-const ItemProdDesktop = () => {
+const ItemProdDesktop = (props) => {
+    const { cols } = props
+    let classShowProd = 'showProdDesktop'
+    if (cols === 3) {
+        classShowProd += ' tres'
+    }
+    if (cols === 4) {
+        classShowProd += ' cuatro'
+    }
+    if (cols === 5) {
+        classShowProd += ' cinco'
+    }
+    if (cols === 6) {
+        classShowProd += ' seis'
+    }
     return (
-        <div className='showProdDesktop'>
+        <div className={classShowProd}>
             <div className='bodyShowProdDesktop'>
                 <div className='bodyProds'>
                     <div className='izqBarShowBody'></div>

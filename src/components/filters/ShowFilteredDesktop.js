@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ShowDesktopBest3 from './ShowDesktopBest3'
 import ShowDesktopBest from './ShowDesktopBest'
 
@@ -7,17 +7,21 @@ import ContNumCols from './ContNumCols'
 import { useSelector } from 'react-redux'
 
 const ShowFilteredDesktop = () => {
+    const [cols,setCols] = useState(0)
     const columnsView = useSelector((state) => state.columnsView) 
+    const handleBusqueda = () => {
+        setCols(columnsView.itemsRow)
+    }
     return (
         <div className='container-fluid p-0 m-0 rowdesktopFiltereds'>
             <div className='orderResultsDesktop'>
                 <ContOrderCols />
                 <ContNumCols>
-                    <div className='buttonSearchConfig pointerCurs'>aplicar búsqueda</div>    
+                    <div className='buttonSearchConfig pointerCurs' onClick={() => handleBusqueda()}>aplicar búsqueda</div>    
                 </ContNumCols>                
             </div>
             <ShowDesktopBest3 />
-            <ShowDesktopBest cols={1}/>
+            <ShowDesktopBest cols={cols}/>
         </div>
     )
 }
