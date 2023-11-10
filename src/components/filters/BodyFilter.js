@@ -289,7 +289,7 @@ const BodyFilter = ({ product }) => {
                 </div>
             </div>  
         </div>        
-                <ShowFiltered product={product}/>
+        <ShowFiltered product={product}/>
         </>
     )
 }

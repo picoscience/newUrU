@@ -1,6 +1,7 @@
 import React from 'react'
 import ShowFilteredRow from './ShowFilteredRow'
 import ShowFilteredDesktop from './ShowFilteredDesktop'
+import PaginationProds from './PaginationProds'
 
 const ShowFiltered = ({ product }) => {
     return (
@@ -31,6 +32,7 @@ const ShowFiltered = ({ product }) => {
                     </div>
                     <div className='row resultsFiltersDesktop p-0 m-0'>
                         <ShowFilteredDesktop product={product}/>
+                        <PaginationProds />
                     </div>    
                 </div>           
             </div>

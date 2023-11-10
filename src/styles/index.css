@@ -8,6 +8,9 @@
 *.pointerCurs{
     cursor: pointer;
 }
+*.noOverflow {
+    overflow: hidden !important;
+}
 /*NAVBAR*/
 .rowNavBar {
     padding-left: 15px;
@@ -659,6 +662,18 @@
     width: 25%;
     padding: 15px;
     padding-bottom: 0px !important;
+}
+.showProdDesktop.noImage .contentShowBody img{
+    opacity: 0;
+}
+.showProdDesktop.fontSmall .nameBodyItem{
+    font-size: small;
+}
+.showProdDesktop.fontNormal .nameBodyItem{
+    font-size: medium;
+}
+.showProdDesktop.fontHigh .nameBodyItem{
+    font-size: large;
 }
 .showProdDesktop.tres {
     width: 33.3333333%;
@@ -1364,7 +1379,7 @@
     width: 100%;
     background-color: transparent;
     border: solid 3px transparent;
-    transition: max-height 0.35s ease-in-out, border 0.35s ease-in-out, background-color 0.35s ease-in-out, opacity 0.35s ease-in-out;
+    transition: max-height 0.35s ease-in-out, border 0.35s ease-in-out, background-color 0.35s ease-in-out, opacity 0.35s ease-in-out, width 0.35s ease-in-out;
 }
 .contBodyConfigs {
     overflow: visible;
@@ -1372,7 +1387,7 @@
 }
 .bodyConfigs {
     position: absolute;
-    width: 305px;
+    width: 180px;
     bottom: -3px !important;
     left: auto !important;
     right: -11px !important;
@@ -1393,7 +1408,8 @@
 .bodyOrderCols.active .opsOrderCols{  
     color: #ffffff;
 }
-.bodyConfigs.active {   
+.bodyConfigs.active {  
+    width: 305px; 
     opacity: 1; 
     max-height: 200px;
     background-color: #0a0c33;
@@ -2291,4 +2307,8 @@
     border-radius: 10px;
     width: 50%;
     font-family: 'ITC_Franklin_Gothic_Medium';
+}
+.paginationProds {
+    margin-top: 50px !important;
+    margin-bottom: 30px !important;
 }

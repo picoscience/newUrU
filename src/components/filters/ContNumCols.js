@@ -51,7 +51,7 @@ const ContNumCols = (props) => {
                     <div className='lineV'></div>
                 </div>
             </div>
-            <div className={`bodyNumCols ${(openNum) ? 'active' : ''}`}>
+            <div className={`bodyNumCols ${(openNum) ? 'active' : 'noOverflow'}`}>
                 <div className='opsOrderCols mt-2'>
                     <span className='pointerCurs'>ver como lista</span>                            
                     <img className='listIconOrder pointerCurs' src={listaIcon} alt='listIcon'/>  

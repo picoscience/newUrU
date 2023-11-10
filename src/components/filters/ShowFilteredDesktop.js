@@ -8,9 +8,15 @@ import { useSelector } from 'react-redux'
 
 const ShowFilteredDesktop = ({ product }) => {
     const [cols,setCols] = useState(0)
+    const [prod,setProd] = useState(0)
+    const [size,setSize] = useState(0)
+    const [image,setImage] = useState(0)
     const columnsView = useSelector((state) => state.columnsView) 
     const handleBusqueda = () => {
         setCols(columnsView.itemsRow)
+        setProd(columnsView.itemsPage)
+        setSize(columnsView.fontSize)
+        setImage(columnsView.imgSearch)
     }
     return (
         <div className='container-fluid p-0 m-0 rowdesktopFiltereds'>
@@ -21,7 +27,7 @@ const ShowFilteredDesktop = ({ product }) => {
                 </ContNumCols>                
             </div>
             <ShowDesktopBest3 />
-            <ShowDesktopBest cols={cols}/>
+            <ShowDesktopBest cols={cols} prod={prod} size={size} image={image}/>
         </div>
     )
 }
