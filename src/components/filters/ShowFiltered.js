@@ -30,7 +30,7 @@ const ShowFiltered = ({ product }) => {
                         <h3><span>234</span> productos</h3>            
                     </div>
                     <div className='row resultsFiltersDesktop p-0 m-0'>
-                        <ShowFilteredDesktop />
+                        <ShowFilteredDesktop product={product}/>
                     </div>    
                 </div>           
             </div>

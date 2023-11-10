@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import listaIcon from '../../images/Listas.svg'
 import personalize from '../../images/Configuracion.svg'
 import { useDispatch, useSelector } from 'react-redux'
@@ -10,6 +10,7 @@ import {
 } from '../../features/columsView/columnsViewSlice'
 
 const ContNumCols = (props) => {
+    const { product } = props 
     const [openNum,setOpenNum] = useState(false)
     const [openConf,setOpenConf] = useState(false)
     const dispatch = useDispatch()
@@ -35,6 +36,13 @@ const ContNumCols = (props) => {
     const handleClick2 = () => {
         setOpenConf(!openConf)
     }
+
+    
+    useEffect(()=>{   
+        setOpenNum(false)        
+        setOpenConf(false)        
+    },[product])
+
     return (
         <div className='contNumColumns'>
             <div className='numColumns' onClick={() => handleClick1()}>

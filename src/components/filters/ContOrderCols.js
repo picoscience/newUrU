@@ -1,17 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import downArrow from '../../images/chevron-down-icon.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { 
     setColumnsViewOrder, 
 } from '../../features/columsView/columnsViewSlice'
 
-const ContOrderCols = () => {
+const ContOrderCols = (props) => {
+    const { product } = props 
     const [openOrder,setOpenOrder] = useState(false)  
     const dispatch = useDispatch() 
     const columnsView = useSelector((state) => state.columnsView) 
     const handleOrderItems = (order) => {
         dispatch(setColumnsViewOrder(order))
     }
+
+    useEffect(()=>{   
+        setOpenOrder(false)        
+    },[product])
+
     const handleClick = () => {
         setOpenOrder(!openOrder)
     }

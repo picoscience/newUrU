@@ -6,7 +6,7 @@ import ContOrderCols from './ContOrderCols'
 import ContNumCols from './ContNumCols'
 import { useSelector } from 'react-redux'
 
-const ShowFilteredDesktop = () => {
+const ShowFilteredDesktop = ({ product }) => {
     const [cols,setCols] = useState(0)
     const columnsView = useSelector((state) => state.columnsView) 
     const handleBusqueda = () => {
@@ -15,8 +15,8 @@ const ShowFilteredDesktop = () => {
     return (
         <div className='container-fluid p-0 m-0 rowdesktopFiltereds'>
             <div className='orderResultsDesktop'>
-                <ContOrderCols />
-                <ContNumCols>
+                <ContOrderCols product={product}/>
+                <ContNumCols product={product}>
                     <div className='buttonSearchConfig pointerCurs' onClick={() => handleBusqueda()}>aplicar búsqueda</div>    
                 </ContNumCols>                
             </div>
